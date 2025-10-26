@@ -1,3 +1,5 @@
-document.getElementById("myButton").addEventListener("click", function() {
-  alert("Hello again!");
-});
+fetch("data/items.csv")
+  .then(response => response.text())
+  .then(text => {
+    console.log(text);
+  });
