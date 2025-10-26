@@ -1,27 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Home</title>
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Papa Parse handles CSV safely (quotes/commas) with tiny code on your side -->
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-  <script defer src="script.js"></script>
-  <style>
-    /* optional minimal table styling */
-    table { border-collapse: collapse; margin: 1.5rem 0; width: min(800px, 92%); }
-    th, td { border: 1px solid #ddd; padding: .6rem .8rem; text-align: left; }
-    thead th { background: #f6f8fb; }
-    .muted { color:#666; }
-  </style>
-</head>
+<html>
 <body>
-  <main style="padding:1rem;">
-    <h1>Random Item + Enchantment</h1>
-    <button id="generate">Generate matches</button>
-    <div id="status" class="muted"></div>
-    <div id="table-wrap"></div>
-  </main>
+  <h1>Hello!</h1>
+  <button onclick="sayHello()">Click me</button>
+
+  <script>
+    function sayHello() {
+      alert("Hello from JavaScript!");
+    }
+  </script>
 </body>
 </html>
