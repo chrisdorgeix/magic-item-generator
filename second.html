@@ -7,9 +7,45 @@
 </head>
 <body>
   <h1>Welcome to the Second Page!</h1>
+  <div id="items"></div>
   <p>You’ve navigated to a new HTML file.</p>
 
   <!-- Button to go back to the first page -->
   <button onclick="location.href='index.html'">Back to Home</button>
+  </main>
+
+  <script>
+    // Change this to 'data/items.json' if you store it in a /data folder
+    const JSON_URL = 'items.json';
+
+    fetch(JSON_URL)
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to load ' + JSON_URL);
+        return res.json();
+      })
+      .then(obj => {
+        // obj is like { "item 1": "info", ... }
+        const entries = Object.entries(obj); // [["item 1","info"], ...]
+
+        const table = document.createElement('table');
+        table.innerHTML = `
+          <thead>
+            <tr><th>Item</th><th>Information</th></tr>
+          </thead>
+          <tbody>
+            ${entries.map(([k, v]) => `
+              <tr>
+                <td>${k}</td>
+                <td>${v}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        `;
+        document.getElementById('items').appendChild(table);
+      })
+      .catch(err => {
+        document.getElementById('items').textContent = 'Error loading items: ' + err.message;
+      });
+  </script>
 </body>
 </html>
