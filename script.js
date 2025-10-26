@@ -30,12 +30,13 @@ document.getElementById('generateBtn').addEventListener('click', async () => {
   const output = [];
 
   for (let i = 0; i < numItems; i++) {
-    const item = baseItems[Math.floor(Math.random() * baseItems.length)];
+    const randomBase = baseItems[Math.floor(Math.random() * baseItems.length)];
     const itemEnchantments = shuffleArray(enchantments).slice(0, numEnchantments);
 
+    // Make a fresh object for each generated item
     output.push({
-      name: item,
-      enchantments: itemEnchantments
+      name: randomBase,
+      enchantments: [...itemEnchantments]
     });
   }
 
