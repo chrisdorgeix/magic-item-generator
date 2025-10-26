@@ -49,3 +49,23 @@ footer {
   font-size: 0.9em;
   color: #888;
 }
+
+/* table styles */
+.nice-table {
+  border-collapse: collapse;
+  margin: 2rem auto;
+  width: min(800px, 92%);
+  font: 16px/1.5 system-ui, Arial, sans-serif;
+}
+.nice-table th, .nice-table td {
+  border: 1px solid #ddd;
+  padding: .65rem .8rem;
+  text-align: left;
+}
+.nice-table thead th {
+  background: #f6f8fb;
+  font-weight: 600;
+}
+.nice-table tbody tr:nth-child(even) {
+  background: #fafbff;
+}
