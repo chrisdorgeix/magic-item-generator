@@ -1,15 +1,39 @@
 {
-  "weapons": ["Short Sword", "Long Sword", "Mace", "Dagger", "Battle Axe", "Spear", "Warhammer"],
-  "armor": ["Leather Armor", "Chain Mail", "Plate Armor", "Cloak", "Shield", "Helmet", "Gauntlets"],
-  "trinkets": ["Ring", "Amulet", "Bracelet", "Earring", "Lucky Coin", "Charm", "Talisman"],
-  "enchantments": [
-    "+1 Fire Damage",
-    "+2 AC",
-    "Invisibility for 1 min",
-    "Life Steal",
-    "Extra Speed",
-    "Resistance to Poison",
-    "Regenerate 1 HP per turn",
-    "Magic Missile Boost"
-  ]
+  "items": {
+    "weapon": [
+      { "name": "Dagger", "category": "Simple Melee", "damage": "1d4 piercing" },
+      { "name": "Longsword", "category": "Martial Melee", "damage": "1d8 slashing" },
+      { "name": "Greatsword", "category": "Martial Melee", "damage": "2d6 slashing" }
+    ],
+    "armor": [
+      { "name": "Leather", "category": "Light", "ac": "11 + Dex" },
+      { "name": "Chain Mail", "category": "Heavy", "ac": "16" }
+    ],
+    "trinket": [
+      { "name": "Moonlit Locket", "theme": "Lunar" },
+      { "name": "Whispering Coin", "theme": "Luck" }
+    ],
+    "consumable": [
+      { "name": "Potion of Healing", "type": "Potion" },
+      { "name": "Scroll of Sparks", "type": "Scroll" }
+    ]
+  },
+  "enchantments": {
+    "weapon": [
+      { "name": "Flames", "effect": "+1d6 fire damage" },
+      { "name": "Frost", "effect": "+1d6 cold damage" }
+    ],
+    "armor": [
+      { "name": "Warding", "effect": "+1 AC" },
+      { "name": "Fireguard", "effect": "Resist fire damage" }
+    ],
+    "trinket": [
+      { "name": "Luck", "effect": "Reroll one check per day" },
+      { "name": "Whisper", "effect": "Cast message 3/day" }
+    ],
+    "consumable": [
+      { "name": "Lingering", "effect": "Duration doubled" },
+      { "name": "Swiftbrew", "effect": "Use as bonus action" }
+    ]
+  }
 }
