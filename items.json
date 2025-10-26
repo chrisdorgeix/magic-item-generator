@@ -1,0 +1,15 @@
+{
+  "weapons": ["Short Sword", "Long Sword", "Mace", "Dagger", "Battle Axe", "Spear", "Warhammer"],
+  "armor": ["Leather Armor", "Chain Mail", "Plate Armor", "Cloak", "Shield", "Helmet", "Gauntlets"],
+  "trinkets": ["Ring", "Amulet", "Bracelet", "Earring", "Lucky Coin", "Charm", "Talisman"],
+  "enchantments": [
+    "+1 Fire Damage",
+    "+2 AC",
+    "Invisibility for 1 min",
+    "Life Steal",
+    "Extra Speed",
+    "Resistance to Poison",
+    "Regenerate 1 HP per turn",
+    "Magic Missile Boost"
+  ]
+}
