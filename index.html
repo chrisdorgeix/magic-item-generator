@@ -1,63 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Magic Item Generator</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Magic Item Generator</h1>
-    <p>Create random fantasy items for your tabletop RPG campaigns!</p>
-  </header>
+<!doctype html>
+<div class="table-wrap">
+<table id="results-table">
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+<th>Enchantment</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+</div>
+</section>
 
-  <!-- Tabs to show available items -->
-  <div class="tabs">
-    <button onclick="showTable('weapons')">Weapons</button>
-    <button onclick="showTable('armor')">Armor</button>
-    <button onclick="showTable('trinkets')">Trinkets</button>
-    <button onclick="showTable('enchantments')">Enchantments</button>
-  </div>
-  <div id="tableContainer" class="tabcontent"></div>
 
-  <!-- Generator form -->
-  <form id="generatorForm">
-    <label>Item Type:
-      <select id="itemType">
-        <option value="weapons">Weapon</option>
-        <option value="armor">Armor</option>
-        <option value="trinkets">Trinket</option>
-      </select>
-    </label>
+<!-- Items Panel -->
+<section id="panel-items" class="panel" role="tabpanel" aria-hidden>
+<h2>Items</h2>
+<div class="subtabs" role="tablist" aria-label="Item Types">
+<button class="subtab active" data-subtab="weapon">Weapons</button>
+<button class="subtab" data-subtab="armor">Armor</button>
+<button class="subtab" data-subtab="trinket">Trinkets</button>
+<button class="subtab" data-subtab="consumable">Consumables</button>
+</div>
 
-    <label>Number of Enchantments:
-      <select id="numEnchantments">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
-    </label>
 
-    <label>Number of Items:
-      <input type="number" id="numItems" min="1" max="50" value="1">
-    </label>
+<div class="subpanels">
+<div id="subpanel-weapon" class="subpanel active">
+<div class="table-wrap"><table id="table-weapons" class="data-table"></table></div>
+</div>
+<div id="subpanel-armor" class="subpanel">
+<div class="table-wrap"><table id="table-armor" class="data-table"></table></div>
+</div>
+<div id="subpanel-trinket" class="subpanel">
+<div class="table-wrap"><table id="table-trinkets" class="data-table"></table></div>
+</div>
+<div id="subpanel-consumable" class="subpanel">
+<div class="table-wrap"><table id="table-consumables" class="data-table"></table></div>
+</div>
+</div>
+</section>
 
-    <button type="button" id="generateBtn">Generate Items</button>
-  </form>
 
-  <!-- Output -->
-  <div id="itemOutput"></div>
+<!-- Enchantments Panel -->
+<section id="panel-enchantments" class="panel" role="tabpanel" aria-hidden>
+<h2>Enchantments</h2>
+<div class="subtabs" role="tablist" aria-label="Enchantments by Item Kind">
+<button class="subtab active" data-subtab="weapon">Weapon</button>
+<button class="subtab" data-subtab="armor">Armor</button>
+<button class="subtab" data-subtab="trinket">Trinket</button>
+<button class="subtab" data-subtab="consumable">Consumable</button>
+</div>
 
-  <!-- Disclaimer -->
-  <footer>
-    <p>
-      This website is a fan-made tool for tabletop RPGs and is not affiliated with or endorsed by Wizards of the Coast. 
-      Any SRD 5.1 content used is © Wizards of the Coast and licensed under CC-BY 4.0.
-    </p>
-  </footer>
 
-  <script src="script.js"></script>
+<div class="subpanels">
+<div id="subpanel-weapon-ench" class="subpanel active">
+<div class="table-wrap"><table id="table-ench-weapons" class="data-table"></table></div>
+</div>
+<div id="subpanel-armor-ench" class="subpanel">
+<div class="table-wrap"><table id="table-ench-armor" class="data-table"></table></div>
+</div>
+<div id="subpanel-trinket-ench" class="subpanel">
+<div class="table-wrap"><table id="table-ench-trinkets" class="data-table"></table></div>
+</div>
+<div id="subpanel-consumable-ench" class="subpanel">
+<div class="table-wrap"><table id="table-ench-consumables" class="data-table"></table></div>
+</div>
+</div>
+</section>
+</main>
+
+
+<footer class="site-footer">
+<p>Built with vanilla HTML/JS/CSS. Edit JSON in <code>/data</code> to customize your tables.</p>
+</footer>
+
+
+<script src="app.js"></script>
 </body>
 </html>
-
