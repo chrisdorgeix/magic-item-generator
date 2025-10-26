@@ -1,83 +1,79 @@
 <!doctype html>
-<div class="table-wrap">
-<table id="results-table">
-<thead>
-<tr>
-<th>#</th>
-<th>Item</th>
-<th>Enchantment</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody></tbody>
-</table>
-</div>
-</div>
-</section>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TTRPG Magic Item Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>🪄 TTRPG Magic Item Generator</h1>
+    <p class="subtitle">Cross‑reference tables of Weapons, Armor, Trinkets, and Consumables with Enchantments</p>
+  </header>
 
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="generator">Generator</button>
+    <button class="tab" data-tab="items">Items</button>
+    <button class="tab" data-tab="enchantments">Enchantments</button>
+  </nav>
 
-<!-- Items Panel -->
-<section id="panel-items" class="panel" role="tabpanel" aria-hidden>
-<h2>Items</h2>
-<div class="subtabs" role="tablist" aria-label="Item Types">
-<button class="subtab active" data-subtab="weapon">Weapons</button>
-<button class="subtab" data-subtab="armor">Armor</button>
-<button class="subtab" data-subtab="trinket">Trinkets</button>
-<button class="subtab" data-subtab="consumable">Consumables</button>
-</div>
+  <main>
+    <section id="panel-generator" class="panel active">
+      <h2>Generate Magic Items</h2>
+      <form id="generator-form" class="card">
+        <div class="form-row">
+          <label for="kind">Item kind</label>
+          <select id="kind" name="kind" required>
+            <option value="weapon">Weapon</option>
+            <option value="armor">Armor</option>
+            <option value="trinket">Trinket</option>
+            <option value="consumable">Consumable</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="count">How many?</label>
+          <select id="count" name="count" required>
+            <option>1</option>
+            <option>5</option>
+            <option>10</option>
+            <option>25</option>
+            <option>50</option>
+          </select>
+        </div>
+        <div class="form-row buttons">
+          <button type="submit" class="btn">Generate</button>
+          <button type="button" id="clear-results" class="btn btn-ghost">Clear</button>
+        </div>
+      </form>
 
+      <div id="results" class="card">
+        <h3>Results</h3>
+        <div id="results-meta" class="muted"></div>
+        <div class="table-wrap">
+          <table id="results-table">
+            <thead><tr><th>#</th><th>Item</th><th>Enchantment</th><th>Notes</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
-<div class="subpanels">
-<div id="subpanel-weapon" class="subpanel active">
-<div class="table-wrap"><table id="table-weapons" class="data-table"></table></div>
-</div>
-<div id="subpanel-armor" class="subpanel">
-<div class="table-wrap"><table id="table-armor" class="data-table"></table></div>
-</div>
-<div id="subpanel-trinket" class="subpanel">
-<div class="table-wrap"><table id="table-trinkets" class="data-table"></table></div>
-</div>
-<div id="subpanel-consumable" class="subpanel">
-<div class="table-wrap"><table id="table-consumables" class="data-table"></table></div>
-</div>
-</div>
-</section>
+    <section id="panel-items" class="panel">
+      <h2>Items</h2>
+      <div id="items-container"></div>
+    </section>
 
+    <section id="panel-enchantments" class="panel">
+      <h2>Enchantments</h2>
+      <div id="ench-container"></div>
+    </section>
+  </main>
 
-<!-- Enchantments Panel -->
-<section id="panel-enchantments" class="panel" role="tabpanel" aria-hidden>
-<h2>Enchantments</h2>
-<div class="subtabs" role="tablist" aria-label="Enchantments by Item Kind">
-<button class="subtab active" data-subtab="weapon">Weapon</button>
-<button class="subtab" data-subtab="armor">Armor</button>
-<button class="subtab" data-subtab="trinket">Trinket</button>
-<button class="subtab" data-subtab="consumable">Consumable</button>
-</div>
+  <footer class="site-footer">
+    <p>Edit <code>items.json</code> to add or change items and enchantments.</p>
+  </footer>
 
-
-<div class="subpanels">
-<div id="subpanel-weapon-ench" class="subpanel active">
-<div class="table-wrap"><table id="table-ench-weapons" class="data-table"></table></div>
-</div>
-<div id="subpanel-armor-ench" class="subpanel">
-<div class="table-wrap"><table id="table-ench-armor" class="data-table"></table></div>
-</div>
-<div id="subpanel-trinket-ench" class="subpanel">
-<div class="table-wrap"><table id="table-ench-trinkets" class="data-table"></table></div>
-</div>
-<div id="subpanel-consumable-ench" class="subpanel">
-<div class="table-wrap"><table id="table-ench-consumables" class="data-table"></table></div>
-</div>
-</div>
-</section>
-</main>
-
-
-<footer class="site-footer">
-<p>Built with vanilla HTML/JS/CSS. Edit JSON in <code>/data</code> to customize your tables.</p>
-</footer>
-
-
-<script src="app.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
