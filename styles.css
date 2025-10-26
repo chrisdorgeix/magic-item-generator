@@ -1,0 +1,51 @@
+/* styles.css */
+
+/* General page styling */
+body {
+  background-color: #f4f6fa;
+  color: #333;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Center content nicely */
+main {
+  margin-top: 100px;
+}
+
+/* Headings */
+h1 {
+  color: #2b4c7e;
+  font-size: 2.5em;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+/* Buttons */
+button {
+  background-color: #2b4c7e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #1a3353;
+}
+
+/* Give a subtle footer */
+footer {
+  margin-top: 80px;
+  font-size: 0.9em;
+  color: #888;
+}
