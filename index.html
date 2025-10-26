@@ -1,79 +1,11 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TTRPG Magic Item Generator</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <title>Hello World</title>
 </head>
 <body>
-  <header class="site-header">
-    <h1>🪄 TTRPG Magic Item Generator</h1>
-    <p class="subtitle">Cross‑reference tables of Weapons, Armor, Trinkets, and Consumables with Enchantments</p>
-  </header>
-
-  <nav class="tabs" role="tablist">
-    <button class="tab active" data-tab="generator">Generator</button>
-    <button class="tab" data-tab="items">Items</button>
-    <button class="tab" data-tab="enchantments">Enchantments</button>
-  </nav>
-
-  <main>
-    <section id="panel-generator" class="panel active">
-      <h2>Generate Magic Items</h2>
-      <form id="generator-form" class="card">
-        <div class="form-row">
-          <label for="kind">Item kind</label>
-          <select id="kind" name="kind" required>
-            <option value="weapon">Weapon</option>
-            <option value="armor">Armor</option>
-            <option value="trinket">Trinket</option>
-            <option value="consumable">Consumable</option>
-          </select>
-        </div>
-        <div class="form-row">
-          <label for="count">How many?</label>
-          <select id="count" name="count" required>
-            <option>1</option>
-            <option>5</option>
-            <option>10</option>
-            <option>25</option>
-            <option>50</option>
-          </select>
-        </div>
-        <div class="form-row buttons">
-          <button type="submit" class="btn">Generate</button>
-          <button type="button" id="clear-results" class="btn btn-ghost">Clear</button>
-        </div>
-      </form>
-
-      <div id="results" class="card">
-        <h3>Results</h3>
-        <div id="results-meta" class="muted"></div>
-        <div class="table-wrap">
-          <table id="results-table">
-            <thead><tr><th>#</th><th>Item</th><th>Enchantment</th><th>Notes</th></tr></thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section id="panel-items" class="panel">
-      <h2>Items</h2>
-      <div id="items-container"></div>
-    </section>
-
-    <section id="panel-enchantments" class="panel">
-      <h2>Enchantments</h2>
-      <div id="ench-container"></div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>Edit <code>items.json</code> to add or change items and enchantments.</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <h1>Hello, world!</h1>
+  <p>This is my first GitHub Pages site.</p>
 </body>
 </html>
