@@ -7,10 +7,57 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Magic Item Generator</h1>
-  <button id="generateBtn">Generate Item</button>
+  <header>
+    <h1>Magic Item Generator</h1>
+    <p>Create random fantasy items for your tabletop RPG campaigns!</p>
+  </header>
+
+  <!-- Tabs to show available items -->
+  <div class="tabs">
+    <button onclick="showTable('weapons')">Weapons</button>
+    <button onclick="showTable('armor')">Armor</button>
+    <button onclick="showTable('trinkets')">Trinkets</button>
+    <button onclick="showTable('enchantments')">Enchantments</button>
+  </div>
+  <div id="tableContainer" class="tabcontent"></div>
+
+  <!-- Generator form -->
+  <form id="generatorForm">
+    <label>Item Type:
+      <select id="itemType">
+        <option value="weapons">Weapon</option>
+        <option value="armor">Armor</option>
+        <option value="trinkets">Trinket</option>
+      </select>
+    </label>
+
+    <label>Number of Enchantments:
+      <select id="numEnchantments">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </label>
+
+    <label>Number of Items:
+      <input type="number" id="numItems" min="1" max="50" value="1">
+    </label>
+
+    <button type="button" id="generateBtn">Generate Items</button>
+  </form>
+
+  <!-- Output -->
   <div id="itemOutput"></div>
-  
+
+  <!-- Disclaimer -->
+  <footer>
+    <p>
+      This website is a fan-made tool for tabletop RPGs and is not affiliated with or endorsed by Wizards of the Coast. 
+      Any SRD 5.1 content used is © Wizards of the Coast and licensed under CC-BY 4.0.
+    </p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
+
